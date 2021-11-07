@@ -1,0 +1,455 @@
+|lab3
+a0[0] => a0[0].IN3
+a0[1] => a0[1].IN3
+a0[2] => a0[2].IN3
+a0[3] => a0[3].IN3
+a1[0] => a1[0].IN3
+a1[1] => a1[1].IN3
+a1[2] => a1[2].IN3
+a1[3] => a1[3].IN3
+s => s.IN6
+light1[0] << decoder:input1.port1
+light1[1] << decoder:input1.port1
+light1[2] << decoder:input1.port1
+light1[3] << decoder:input1.port1
+light1[4] << decoder:input1.port1
+light1[5] << decoder:input1.port1
+light1[6] << decoder:input1.port1
+light2[0] << decoder:input2.port1
+light2[1] << decoder:input2.port1
+light2[2] << decoder:input2.port1
+light2[3] << decoder:input2.port1
+light2[4] << decoder:input2.port1
+light2[5] << decoder:input2.port1
+light2[6] << decoder:input2.port1
+outputlight[0] << decoder:output1.port1
+outputlight[1] << decoder:output1.port1
+outputlight[2] << decoder:output1.port1
+outputlight[3] << decoder:output1.port1
+outputlight[4] << decoder:output1.port1
+outputlight[5] << decoder:output1.port1
+outputlight[6] << decoder:output1.port1
+coe << multiplexer:m2.port3
+cof << multiplexer:m3.port3
+cog << multiplexer:m4.port3
+
+
+|lab3|decoder:input1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN0
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN0
+a[1] => e.IN0
+a[1] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN0
+a[1] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN0
+a[2] => e.IN0
+a[2] => e.IN0
+a[2] => e.IN1
+a[2] => e.IN0
+a[2] => e.IN0
+a[2] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+e[0] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[1] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[2] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[3] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[4] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[5] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[6] <= e.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|decoder:input2
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN0
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN0
+a[1] => e.IN0
+a[1] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN0
+a[1] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN0
+a[2] => e.IN0
+a[2] => e.IN0
+a[2] => e.IN1
+a[2] => e.IN0
+a[2] => e.IN0
+a[2] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+e[0] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[1] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[2] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[3] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[4] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[5] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[6] <= e.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|ripplecarry:rc
+a0[0] => a0[0].IN1
+a0[1] => a0[1].IN1
+a0[2] => a0[2].IN1
+a0[3] => a0[3].IN1
+a1[0] => comb.IN0
+a1[1] => comb.IN0
+a1[2] => comb.IN0
+a1[3] => comb.IN0
+s => s.IN2
+result[0] <= fulladder:adder1.port3
+result[1] <= fulladder:adder2.port3
+result[2] <= fulladder:adder3.port3
+result[3] <= fulladder:adder4.port3
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+sign1 <= adddecoder:comb_7.port2
+sign2 <= adddecoder:comb_7.port3
+sign3 <= adddecoder:comb_7.port4
+
+
+|lab3|ripplecarry:rc|fulladder:adder1
+a0bit => r.IN0
+a0bit => cout.IN0
+a1bit => r.IN1
+a1bit => cout.IN1
+cin => r.IN1
+cin => cout.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|ripplecarry:rc|fulladder:adder2
+a0bit => r.IN0
+a0bit => cout.IN0
+a1bit => r.IN1
+a1bit => cout.IN1
+cin => r.IN1
+cin => cout.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|ripplecarry:rc|fulladder:adder3
+a0bit => r.IN0
+a0bit => cout.IN0
+a1bit => r.IN1
+a1bit => cout.IN1
+cin => r.IN1
+cin => cout.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|ripplecarry:rc|fulladder:adder4
+a0bit => r.IN0
+a0bit => cout.IN0
+a1bit => r.IN1
+a1bit => cout.IN1
+cin => r.IN1
+cin => cout.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|ripplecarry:rc|adddecoder:comb_7
+op => Add0.IN2
+op => Add1.IN2
+cout => Add0.IN1
+cout => Add1.IN1
+e <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+f <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+g <= <VCC>
+
+
+|lab3|rcsubtractor:rs
+a0[0] => a0[0].IN1
+a0[1] => a0[1].IN1
+a0[2] => a0[2].IN1
+a0[3] => a0[3].IN1
+a1[0] => comb.IN0
+a1[1] => comb.IN0
+a1[2] => comb.IN0
+a1[3] => comb.IN0
+s => s.IN2
+final[0] <= fulladder:ad1.port3
+final[1] <= fulladder:ad2.port3
+final[2] <= fulladder:ad3.port3
+final[3] <= fulladder:ad4.port3
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+sign1 <= minusdecoder:md1.port2
+sign2 <= minusdecoder:md1.port3
+sign3 <= minusdecoder:md1.port4
+
+
+|lab3|rcsubtractor:rs|fulladder:adder1
+a0bit => r.IN0
+a0bit => cout.IN0
+a1bit => r.IN1
+a1bit => cout.IN1
+cin => r.IN1
+cin => cout.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|rcsubtractor:rs|fulladder:adder2
+a0bit => r.IN0
+a0bit => cout.IN0
+a1bit => r.IN1
+a1bit => cout.IN1
+cin => r.IN1
+cin => cout.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|rcsubtractor:rs|fulladder:adder3
+a0bit => r.IN0
+a0bit => cout.IN0
+a1bit => r.IN1
+a1bit => cout.IN1
+cin => r.IN1
+cin => cout.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|rcsubtractor:rs|fulladder:adder4
+a0bit => r.IN0
+a0bit => cout.IN0
+a1bit => r.IN1
+a1bit => cout.IN1
+cin => r.IN1
+cin => cout.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|rcsubtractor:rs|fulladder:ad1
+a0bit => r.IN0
+a0bit => cout.IN0
+a1bit => r.IN1
+a1bit => cout.IN1
+cin => r.IN1
+cin => cout.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|rcsubtractor:rs|fulladder:ad2
+a0bit => r.IN0
+a0bit => cout.IN0
+a1bit => r.IN1
+a1bit => cout.IN1
+cin => r.IN1
+cin => cout.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|rcsubtractor:rs|fulladder:ad3
+a0bit => r.IN0
+a0bit => cout.IN0
+a1bit => r.IN1
+a1bit => cout.IN1
+cin => r.IN1
+cin => cout.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|rcsubtractor:rs|fulladder:ad4
+a0bit => r.IN0
+a0bit => cout.IN0
+a1bit => r.IN1
+a1bit => cout.IN1
+cin => r.IN1
+cin => cout.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|rcsubtractor:rs|minusdecoder:md1
+op => Add0.IN1
+cout => Add0.IN2
+e <= <VCC>
+f <= <VCC>
+g <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|multiplexer:m1
+a[0] => result.DATAB
+a[1] => result.DATAB
+a[2] => result.DATAB
+a[3] => result.DATAB
+b[0] => result.DATAA
+b[1] => result.DATAA
+b[2] => result.DATAA
+b[3] => result.DATAA
+s => result.OUTPUTSELECT
+s => result.OUTPUTSELECT
+s => result.OUTPUTSELECT
+s => result.OUTPUTSELECT
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|multiplexer:m2
+a[0] => result.DATAB
+a[1] => result.DATAB
+a[2] => result.DATAB
+a[3] => result.DATAB
+b[0] => result.DATAA
+b[1] => result.DATAA
+b[2] => result.DATAA
+b[3] => result.DATAA
+s => result.OUTPUTSELECT
+s => result.OUTPUTSELECT
+s => result.OUTPUTSELECT
+s => result.OUTPUTSELECT
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|multiplexer:m3
+a[0] => result.DATAB
+a[1] => result.DATAB
+a[2] => result.DATAB
+a[3] => result.DATAB
+b[0] => result.DATAA
+b[1] => result.DATAA
+b[2] => result.DATAA
+b[3] => result.DATAA
+s => result.OUTPUTSELECT
+s => result.OUTPUTSELECT
+s => result.OUTPUTSELECT
+s => result.OUTPUTSELECT
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|multiplexer:m4
+a[0] => result.DATAB
+a[1] => result.DATAB
+a[2] => result.DATAB
+a[3] => result.DATAB
+b[0] => result.DATAA
+b[1] => result.DATAA
+b[2] => result.DATAA
+b[3] => result.DATAA
+s => result.OUTPUTSELECT
+s => result.OUTPUTSELECT
+s => result.OUTPUTSELECT
+s => result.OUTPUTSELECT
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|decoder:output1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN0
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[0] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN0
+a[1] => e.IN0
+a[1] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN0
+a[1] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN1
+a[1] => e.IN0
+a[2] => e.IN0
+a[2] => e.IN0
+a[2] => e.IN1
+a[2] => e.IN0
+a[2] => e.IN0
+a[2] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+a[3] => e.IN1
+e[0] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[1] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[2] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[3] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[4] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[5] <= e.DB_MAX_OUTPUT_PORT_TYPE
+e[6] <= e.DB_MAX_OUTPUT_PORT_TYPE
+
+

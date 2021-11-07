@@ -1,0 +1,11 @@
+module multiplexer(a, b, s, result)
+
+
+input [3:0] a, b;
+input s;
+
+output [3:0] result;
+
+assign result=(s)?a:b;
+
+endmodule
