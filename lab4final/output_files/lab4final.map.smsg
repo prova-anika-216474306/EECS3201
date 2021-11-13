@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at lab4final.v(44): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/lab4final/lab4final.v Line: 44
