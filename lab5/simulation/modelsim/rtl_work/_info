@@ -1,0 +1,103 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/lab5/simulation/modelsim
+vtest1
+Z1 !s110 1637989161
+!i10b 1
+!s100 Oc_Fia15oiW^gJ^B`74Yd1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I]czB[3MI_N8C=]7D?D57O3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1637547147
+8C:/intelFPGA_lite/lab5/test1.v
+FC:/intelFPGA_lite/lab5/test1.v
+!i122 1
+L0 1 9
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1637989161.000000
+!s107 C:/intelFPGA_lite/lab5/test2_tb.v|C:/intelFPGA_lite/lab5/test2.v|C:/intelFPGA_lite/lab5/test1_tb.v|C:/intelFPGA_lite/lab5/test1.v|
+Z6 !s90 -reportprogress|300|-work|work|C:/intelFPGA_lite/lab5/test1.v|C:/intelFPGA_lite/lab5/test1_tb.v|C:/intelFPGA_lite/lab5/test2.v|C:/intelFPGA_lite/lab5/test2_tb.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+vtest1_tb
+R1
+!i10b 1
+!s100 1;OkV088TU@]Mk_HocbX>0
+R2
+IZML^zHGFY]B:O`T=DUmz11
+R3
+R0
+w1637985841
+8C:/intelFPGA_lite/lab5/test1_tb.v
+FC:/intelFPGA_lite/lab5/test1_tb.v
+!i122 1
+L0 115 75
+R4
+r1
+!s85 0
+31
+R5
+Z9 !s107 C:/intelFPGA_lite/lab5/test2_tb.v|C:/intelFPGA_lite/lab5/test2.v|C:/intelFPGA_lite/lab5/test1_tb.v|C:/intelFPGA_lite/lab5/test1.v|
+R6
+!i113 1
+R7
+R8
+vtest2
+R1
+!i10b 1
+!s100 WDAD9ddab1IF2A10LO]a70
+R2
+IkSSf@PcH_1Z9>4o1di;6T2
+R3
+R0
+w1637530196
+8C:/intelFPGA_lite/lab5/test2.v
+FC:/intelFPGA_lite/lab5/test2.v
+!i122 1
+L0 1 26
+R4
+r1
+!s85 0
+31
+R5
+R9
+R6
+!i113 1
+R7
+R8
+vtest2_tb
+R1
+!i10b 1
+!s100 0QYbXglZSKHeZHN][[k[j1
+R2
+I6^MiPIgOUO[jJ2IDzH3]K3
+R3
+R0
+w1637988866
+8C:/intelFPGA_lite/lab5/test2_tb.v
+FC:/intelFPGA_lite/lab5/test2_tb.v
+!i122 1
+L0 4 60
+R4
+r1
+!s85 0
+31
+R5
+R9
+R6
+!i113 1
+R7
+R8

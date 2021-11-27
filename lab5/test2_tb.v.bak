@@ -1,0 +1,50 @@
+
+`timescale 1 ns/1 ns  // time-unit = 1 ns, precision = 10 ps
+
+module test2_tb;
+
+
+reg clk,a;
+wire [3:0] r;
+
+
+test2 t2(clk, a, r);
+
+ 
+always 
+	 
+	 begin
+   clk <=0; #10;
+	clk <=1; #10;
+	 
+end 
+
+
+always @(posedge clk)
+begin
+
+
+ a = 0;
+ if(r==0)
+					begin
+					$display("All outputs are zero");
+					end 
+ #100;
+ a = 1;
+ 
+ if(r==0)
+					begin
+					$display("All outputs are zero");
+					end
+ #200;
+ a = 0;
+ 
+ 
+  $stop;
+end
+
+ 
+ 
+ 
+
+endmodule

@@ -1,0 +1,214 @@
+# Reading pref.tcl
+# do lab5_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/lab5 {C:/intelFPGA_lite/lab5/test2.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:59:07 on Nov 26,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/lab5" C:/intelFPGA_lite/lab5/test2.v 
+# -- Compiling module test2
+# 
+# Top level modules:
+# 	test2
+# End time: 23:59:07 on Nov 26,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vlog -reportprogress 300 -work work C:/intelFPGA_lite/lab5/test1.v C:/intelFPGA_lite/lab5/test1_tb.v C:/intelFPGA_lite/lab5/test2.v C:/intelFPGA_lite/lab5/test2_tb.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:59:21 on Nov 26,2021
+# vlog -reportprogress 300 -work work C:/intelFPGA_lite/lab5/test1.v C:/intelFPGA_lite/lab5/test1_tb.v C:/intelFPGA_lite/lab5/test2.v C:/intelFPGA_lite/lab5/test2_tb.v 
+# -- Compiling module test1
+# -- Compiling module test1_tb
+# -- Compiling module test2
+# -- Compiling module test2_tb
+# 
+# Top level modules:
+# 	test1_tb
+# 	test2_tb
+# End time: 23:59:21 on Nov 26,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui -l msim_transcript work.test1_tb
+# vsim -gui -l msim_transcript work.test1_tb 
+# Start time: 23:59:37 on Nov 26,2021
+# Loading work.test1_tb
+# Loading work.test1
+add wave -position insertpoint  \
+sim:/test1_tb/a
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Anika  Hostname: DESKTOP-OKDJB4J  ProcessID: 22028
+#           Attempting to use alternate WLF file "./wlft42m3dw".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft42m3dw
+add wave -position insertpoint  \
+sim:/test1_tb/b
+add wave -position insertpoint  \
+sim:/test1_tb/c
+add wave -position insertpoint  \
+sim:/test1_tb/x
+add wave -position insertpoint  \
+sim:/test1_tb/y
+run -all
+# All outputs are zero
+vsim -gui -l msim_transcript work.test2_tb
+# End time: 00:01:23 on Nov 27,2021, Elapsed time: 0:01:46
+# Errors: 0, Warnings: 2
+# vsim -gui -l msim_transcript work.test2_tb 
+# Start time: 00:01:23 on Nov 27,2021
+# Loading work.test2_tb
+# Loading work.test2
+add wave -position insertpoint  \
+sim:/test2_tb/a
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Anika  Hostname: DESKTOP-OKDJB4J  ProcessID: 22028
+#           Attempting to use alternate WLF file "./wlft3b431m".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft3b431m
+add wave -position insertpoint  \
+sim:/test2_tb/clk
+add wave -position insertpoint  \
+sim:/test2_tb/r
+run -all
+# All outputs are zero
+# All outputs are zero
+# ** Note: $stop    : C:/intelFPGA_lite/lab5/test2_tb.v(28)
+#    Time: 300 ns  Iteration: 0  Instance: /test2_tb
+# Break in Module test2_tb at C:/intelFPGA_lite/lab5/test2_tb.v line 28
+vsim -gui -l msim_transcript work.test1_tb
+# End time: 00:08:39 on Nov 27,2021, Elapsed time: 0:07:16
+# Errors: 0, Warnings: 2
+# vsim -gui -l msim_transcript work.test1_tb 
+# Start time: 00:08:39 on Nov 27,2021
+# Loading work.test1_tb
+# Loading work.test1
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/test1_tb/a
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Anika  Hostname: DESKTOP-OKDJB4J  ProcessID: 22028
+#           Attempting to use alternate WLF file "./wlft8gix22".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft8gix22
+add wave -position insertpoint  \
+sim:/test1_tb/b
+add wave -position insertpoint  \
+sim:/test1_tb/a \
+sim:/test1_tb/b \
+sim:/test1_tb/c \
+sim:/test1_tb/x \
+sim:/test1_tb/y
+vsim -gui -l msim_transcript work.test1_tb
+# End time: 00:09:28 on Nov 27,2021, Elapsed time: 0:00:49
+# Errors: 0, Warnings: 2
+# vsim -gui -l msim_transcript work.test1_tb 
+# Start time: 00:09:28 on Nov 27,2021
+# Loading work.test1_tb
+# Loading work.test1
+add wave -position insertpoint  \
+sim:/test1_tb/a \
+sim:/test1_tb/b \
+sim:/test1_tb/c \
+sim:/test1_tb/x \
+sim:/test1_tb/y
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Anika  Hostname: DESKTOP-OKDJB4J  ProcessID: 22028
+#           Attempting to use alternate WLF file "./wlft932r5h".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft932r5h
+run -all
+# All outputs are zero
+vsim -gui -l msim_transcript work.test1_tb
+# End time: 00:10:28 on Nov 27,2021, Elapsed time: 0:01:00
+# Errors: 0, Warnings: 2
+# vsim -gui -l msim_transcript work.test1_tb 
+# Start time: 00:10:28 on Nov 27,2021
+# Loading work.test1_tb
+# Loading work.test1
+add wave -position insertpoint  \
+sim:/test1_tb/a \
+sim:/test1_tb/b \
+sim:/test1_tb/c \
+sim:/test1_tb/x \
+sim:/test1_tb/y
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Anika  Hostname: DESKTOP-OKDJB4J  ProcessID: 22028
+#           Attempting to use alternate WLF file "./wlftem97cg".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftem97cg
+run -all
+# All outputs are zero
+vsim -gui -l msim_transcript work.test2_tb
+# End time: 00:11:21 on Nov 27,2021, Elapsed time: 0:00:53
+# Errors: 0, Warnings: 2
+# vsim -gui -l msim_transcript work.test2_tb 
+# Start time: 00:11:21 on Nov 27,2021
+# Loading work.test2_tb
+# Loading work.test2
+add wave -position insertpoint  \
+sim:/test2_tb/a \
+sim:/test2_tb/clk \
+sim:/test2_tb/r
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Anika  Hostname: DESKTOP-OKDJB4J  ProcessID: 22028
+#           Attempting to use alternate WLF file "./wlft1vfekh".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft1vfekh
+run -all
+# All outputs are zero
+# All outputs are zero
+# ** Note: $stop    : C:/intelFPGA_lite/lab5/test2_tb.v(28)
+#    Time: 300 ns  Iteration: 0  Instance: /test2_tb
+# Break in Module test2_tb at C:/intelFPGA_lite/lab5/test2_tb.v line 28
+vsim -gui -l msim_transcript work.test1_tb
+# End time: 00:12:38 on Nov 27,2021, Elapsed time: 0:01:17
+# Errors: 0, Warnings: 2
+# vsim -gui -l msim_transcript work.test1_tb 
+# Start time: 00:12:38 on Nov 27,2021
+# Loading work.test1_tb
+# Loading work.test1
+add wave -position insertpoint  \
+sim:/test1_tb/a \
+sim:/test1_tb/b \
+sim:/test1_tb/c \
+sim:/test1_tb/x \
+sim:/test1_tb/y
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Anika  Hostname: DESKTOP-OKDJB4J  ProcessID: 22028
+#           Attempting to use alternate WLF file "./wlftts25fq".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftts25fq
+run -all
+# All outputs are zero
+vsim -gui -l msim_transcript work.test2_tb
+# End time: 00:14:23 on Nov 27,2021, Elapsed time: 0:01:45
+# Errors: 0, Warnings: 2
+# vsim -gui -l msim_transcript work.test2_tb 
+# Start time: 00:14:23 on Nov 27,2021
+# Loading work.test2_tb
+# Loading work.test2
+add wave -position insertpoint  \
+sim:/test2_tb/a \
+sim:/test2_tb/clk \
+sim:/test2_tb/r
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Anika  Hostname: DESKTOP-OKDJB4J  ProcessID: 22028
+#           Attempting to use alternate WLF file "./wlftfd3hry".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfd3hry
+# Load canceled
+run -all
+# All outputs are zero
+# All outputs are zero
+# ** Note: $stop    : C:/intelFPGA_lite/lab5/test2_tb.v(28)
+#    Time: 300 ns  Iteration: 0  Instance: /test2_tb
+# Break in Module test2_tb at C:/intelFPGA_lite/lab5/test2_tb.v line 28
+# End time: 00:26:40 on Nov 27,2021, Elapsed time: 0:12:17
+# Errors: 0, Warnings: 2
